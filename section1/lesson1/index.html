@@ -1,5 +1,5 @@
 <!DOCTYPE html >
-<html lang="en" >
+<html lang="en" ng-app>
 <head >
 	<title >Data Binding</title >
 	<link href="../libs/bootstrap/dist/css/bootstrap.min.css"
@@ -10,7 +10,17 @@
 
 <body >
 
-<div class="container" >
+<div class="container" ng-init="title='AngularJS 2';
+awesome=true;" >
+	{{title}} is Awesome: {{awesome}}
+
+	<input type="text"
+		   class="form-control"
+	       ng-model="title"/>
+
+	<input type="checkbox"
+		   class="form-control"
+		   ng-model="awesome"/>
 </div >
 
 <script src="../libs/angular/angular.min.js" ></script >
