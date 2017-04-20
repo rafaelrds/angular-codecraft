@@ -12,7 +12,6 @@ app.run(function (defaultErrorMessageResolver) {
 	}
 );
 
-
 app.controller('MinMaxCtrl', function ($scope, $http) {
 	$scope.formModel = {};
 	$scope.submitting = false;
