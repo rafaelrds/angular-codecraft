@@ -17,7 +17,18 @@
 	</div >
 </nav >
 
-<div class="container main-content">
+<div class="container main-content" ng-controller="PersonsController">
+	<table class="table table-bordered">
+		<tr>
+			<th></th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Birthday</th>
+		</tr>
+
+		<tr ng-repeat="person in persons"></tr>
+	</table>
+
 </div >
 
 
