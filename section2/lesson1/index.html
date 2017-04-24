@@ -26,7 +26,13 @@
 			<th>Birthday</th>
 		</tr>
 
-		<tr ng-repeat="person in persons"></tr>
+		<tr ng-repeat="person in persons">
+			<td>{{$index+1}}</td>
+			<td>{{person.name}}</td>
+			<td>{{person.email}}</td>
+			<td>{{person.birthdate | date:LongDate}}</td>
+		</tr>
+
 	</table>
 
 </div >
