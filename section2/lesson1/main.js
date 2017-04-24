@@ -1,6 +1,12 @@
 var app = angular.module('codecraft', []);
 
 app.controller('PersonsController', function ($scope) {
+    $scope.selectedIndex;
+    $scope.selectPerson = function (index) {
+        $scope.selectedIndex = index;
+        console.log(index);
+    };
+
     $scope.persons = [
         {
             "name": "Gregory Huffman",
@@ -903,7 +909,6 @@ app.controller('PersonsController', function ($scope) {
             "country": "Taiwan"
         }
     ]
-
 
 });
 
