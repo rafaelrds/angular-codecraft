@@ -2,9 +2,11 @@ var app = angular.module('codecraft', []);
 
 app.controller('PersonsController', function ($scope) {
     $scope.selectedIndex;
-    $scope.selectPerson = function (index) {
+    $scope.selectedPerson;
+    $scope.selectPerson = function (person, index) {
         $scope.selectedIndex = index;
-        console.log(index);
+        $scope.selectedPerson = person;
+        console.log(person);
     };
 
     $scope.persons = [
