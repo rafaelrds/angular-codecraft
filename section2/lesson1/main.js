@@ -3,6 +3,7 @@ var app = angular.module('codecraft', []);
 app.controller('PersonsController', function ($scope) {
     $scope.selectedIndex;
     $scope.selectedPerson;
+    $scope.order = "email";
     $scope.search = "";
     $scope.selectPerson = function (person, index) {
         $scope.selectedIndex = index;
