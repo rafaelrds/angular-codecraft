@@ -27,7 +27,7 @@
                     <input type="text"
                            class="form-control"
                            id="name"
-                           ng-model="search.$"
+                           ng-model="search"
                            placeholder="Search name..."
                     />
                 </div >
@@ -50,7 +50,7 @@
 					'background-color': selectedIndex == $index ? 'lightgray' : ''
 					}"
                     ng-click="selectPerson(person, $index)"
-                    ng-repeat="person in persons | filter:search">
+                    ng-repeat="person in persons | filter:sensitiveSearch">
                     <td>{{$index+1}}</td>
                     <td>{{person.name}}</td>
                     <td>{{person.email}}</td>

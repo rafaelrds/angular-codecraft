@@ -3,12 +3,20 @@ var app = angular.module('codecraft', []);
 app.controller('PersonsController', function ($scope) {
     $scope.selectedIndex;
     $scope.selectedPerson;
-    $scope.search = {};
+    $scope.search = "";
     $scope.selectPerson = function (person, index) {
         $scope.selectedIndex = index;
         $scope.selectedPerson = person;
         console.log(person);
     };
+    
+    $scope.sensitiveSearch = function (person) {
+        if ($scope.search) {
+            return person.name.indexOf($scope.search) == 0 ||
+                person.email.indexOf($scope.email) == 0;
+        }
+        return true;
+    }
 
     $scope.persons = [
         {
