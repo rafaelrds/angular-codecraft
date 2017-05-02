@@ -3,7 +3,8 @@ var app = angular.module('codecraft', [
 ]);
 
 app.config(function ($httpProvider, $resourceProvider) {
-	$httpProvider.defaults.headers.common['Authorization'] = 'Token f54d78d77555a57e30d8bb8b7a6bcb84e9ae2a16';
+	console.log(config.MY_KEY);
+	$httpProvider.defaults.headers.common['Authorization'] = 'Token ' + config.MY_KEY;
 	$resourceProvider.defaults.stripTrailingSlashes = false;
 });
 
