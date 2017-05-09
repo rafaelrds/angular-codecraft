@@ -1,22 +1,21 @@
-var app = angular.module('codecraft', [
-	'ngResource'
+var app = angular.module("codecraft", [
+	"ngResource"
 ]);
 
 app.config(function ($httpProvider, $resourceProvider) {
-	console.log(config.MY_KEY);
-	$httpProvider.defaults.headers.common['Authorization'] = 'Token ' + config.MY_KEY;
+	$httpProvider.defaults.headers.common["Authorization"] = "Token " + config.my_key;
 	$resourceProvider.defaults.stripTrailingSlashes = false;
 });
 
-app.factory('Contact', function ($resource) {
-	return $resource("https://api.codecraft.tv/samples/v1/contact/:id");
-});
+app.factory("Contact", function ($resource) {
+	return $resource("https://api.codecraft.tv/samples/v1/contact/:id/");
+})
 
-app.controller('PersonDetailController', function ($scope, ContactService) {
+app.controller("PersonDetailController", function ($scope, ContactService) {
 	$scope.contacts = ContactService;
 });
 
-app.controller('PersonListController', function ($scope, ContactService) {
+app.controller("PersonListController", function ($scope, ContactService) {
 
 	$scope.search = "";
 	$scope.order = "email";
@@ -32,20 +31,19 @@ app.controller('PersonListController', function ($scope, ContactService) {
 
 });
 
-app.service('ContactService', function (Contact) {
-
+app.service("ContactService", function (Contact) {
 	var self = {
-		'addPerson': function (person) {
+		"addPerson": function (person) {
 			this.persons.push(person);
 		},
-		'page' : 1,
-		'hasMore' : true,
-		'isLoading' : false,
-		'selectedPerson' : null,
-		'persons' : [],
-		'loadContacts' : function () {
+		"page" : 1,
+		"hasMore" : true,
+		"isLoading" : false,
+		"selectedPerson": null,
+		"persons": [],
+		"loadContacts" : function () {
             Contact.get(function (data) {
-            	console.log(data);
+                console.log(data);
                 angular.forEach(data.results, function (person) {
 					self.persons.push(new Contact(person));
                 });
